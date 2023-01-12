@@ -71,6 +71,8 @@ const refreshToken = async (req, res = response) => {
         const token = await JWTgenerator(uid, name);
         res.status(201).json({
             ok: true,
+            uid,
+            name,
             token,
         });
     } catch (error) {
